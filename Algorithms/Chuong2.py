@@ -117,7 +117,7 @@ def Miller_RabinCheckPrimeNumber(n, t):
             j = 1
             while j <= s - 1 and y != n - 1:
                 y = (y ** 2) % n
-                if i == 1:
+                if y == 1:
                     return False
                 j += 1
             if y != n - 1:
