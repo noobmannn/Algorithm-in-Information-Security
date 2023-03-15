@@ -44,7 +44,7 @@ def segmentedSieveOfEratosthenes(n):
                 if j != pr and j % pr == 0:
                     check[j] = False
                     break
-    for i in range(n - (n - 2) % p, n):
+    for i in range(n - (n - 2) % p, n + 1):
         for pr in subCheck:
             if i != pr and i % pr == 0:
                 check[i] = False
