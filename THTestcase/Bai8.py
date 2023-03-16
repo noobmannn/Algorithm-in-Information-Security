@@ -1,10 +1,8 @@
 def ExtendedEuclide(a, b):
     if a == 0:
         return b, 0, 1
-    d, x1, y1 = ExtendedEuclide(b % a, a)
-    x = y1 - (b // a) * x1
-    y = x1
-    return d, x, y
+    d, x, y = ExtendedEuclide(b % a, a)
+    return d, y - (b // a) * x, x
 
 
 def main():
