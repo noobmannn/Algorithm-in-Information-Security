@@ -54,6 +54,8 @@ def AdditionInFp(a, b, p, w):
     e, C = MultiprecisionAddition(a, b, t, w)
     if e == 1:
         e, C = MultiprecisionSubtraction(parseArrayToInteger(C, w), p, t, w)
+    elif parseArrayToInteger(C, w) >= p:
+        e, C = MultiprecisionSubtraction(parseArrayToInteger(C, w), p, t, w)
     return e, C
 
 
@@ -82,7 +84,8 @@ def main():
     e2, res2 = AdditionInFp(a, b, p, w)
     print(f"Dạng mảng các từ 8 bit của số {p} là: {printReverseList(parseIntegerToArray(p, 4, 8))}")
     print(f"Cộng Chính Xác Bội {a} và {b} ta được: (e, C) = " + printResult(e1, res1))
-    print(f"Kết quả phép cộng trên trường Fp với p = {p} là: " + printReverseList(res2))
+    print(f"Kết quả phép cộng trên trường Fp với p = {p} là: " + printResult(e2, res2))
+    print(f"Dạng số nguyên: {parseArrayToInteger(res2, w)}")
 
 
 if __name__ == "__main__":
