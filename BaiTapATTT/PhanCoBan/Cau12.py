@@ -10,9 +10,8 @@ def checkPrime(n):
     return True
 
 
-def sieveOfEratosthenes(n, k):
+def sieveOfEratosthenes(n):
     listPrime = []
-    listResult = []
     check = [True for _ in range(n + 1)]
     p = 2
     while p * p <= n:
@@ -23,26 +22,32 @@ def sieveOfEratosthenes(n, k):
     for p in range(2, n + 1):
         if check[p]:
             listPrime.append(p)
-    for i in range(0, len(listPrime) - 4):
+    return listPrime
+
+
+def solve(n, k, listPrime):
+    listResult = []
+    for i in range(0, len(listPrime) - k):
         sum = 0
         k1 = 0
         while k1 < k:
             sum += listPrime[i + k1]
             k1 += 1
         if checkPrime(sum) and sum <= n:
-            listResult.clear()
+            listTmp = []
             k1 = 0
             while k1 < k:
-                listResult.append(listPrime[i + k1])
+                listTmp.append(listPrime[i + k1])
                 k1 += 1
+            listResult.append(listTmp)
     return listResult
 
 
 def main():
     n = int(input("Nhập N: "))
     k = int(input("Nhập K: "))
-    print(f"Các số nguyên tố thoả mãn yêu cầu là: ", end="")
-    print(sieveOfEratosthenes(n, k))
+    print(f"Các bộ số nguyên tố thoả mãn yêu cầu là: ", end="")
+    print(solve(n, k, sieveOfEratosthenes(n)))
 
 
 if __name__ == "__main__":
