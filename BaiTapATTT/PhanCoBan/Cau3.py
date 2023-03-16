@@ -30,7 +30,7 @@ def findP(n):
     p = 0
     for i in range(1, n + 1):
         if n % i == 0:
-            p += 1
+            p += i
     return p
 
 
@@ -38,13 +38,14 @@ def findS(n):
     s = 0
     for i in range(1, n + 1):
         if n % i == 0:
-            s += i
+            s += 1
     return s
 
 
 def main():
     N = int(input("Nhập N: "))
-    print("Tổng cần tìm là: ", end="")
+    print(f"k = {findK(N)}, q = {findQ(N)}, p = {findP(N)}, s = {findS(N)}")
+    print("Tổng cần tìm là: N + p + s - q - k = ", end="")
     print(N - findK(N) - findQ(N) + findP(N) + findS(N))
 
 
