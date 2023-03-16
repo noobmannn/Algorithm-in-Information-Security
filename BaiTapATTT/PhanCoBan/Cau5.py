@@ -1,6 +1,6 @@
 def sieveOfEratosthenes(m, n):
     s = 0
-    check = [True for i in range(n + 1)]
+    check = [True for _ in range(n + 1)]
     p = 2
     while p * p <= n:
         if check[p]:
