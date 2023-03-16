@@ -1,10 +1,13 @@
-import math
+def EuclideForFindGCD(a, b):
+    if a == 0:
+        return b
+    return EuclideForFindGCD(b % a, a)
 
 
 def findAB(m, n, d):
     for i in range(m + 1, n):
-        for j in range(m, i):
-            if math.gcd(i, j) == d:
+        for j in range(i + 1, n):
+            if EuclideForFindGCD(i, j) == d:
                 print(f"{i} {j}")
 
 
