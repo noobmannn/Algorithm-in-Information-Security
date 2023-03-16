@@ -81,7 +81,8 @@ def main():
     e1, res1 = MultiprecisionSubtraction(a, b, t, w)
     e2, res2 = SubtractionInFp(a, b, p, w)
     print(f"Trừ Chính Xác Bội {a} và {b} ta được: (e, C) = " + printResult(e1, res1))
-    print(f"Kết quả phép trừ trên trường Fp với p = {p} là: " + printReverseList(res2))
+    print(f"Kết quả phép trừ trên trường Fp với p = {p} là: " + printResult(e2, res2))
+    print(f"Dạng số nguyên: {parseArrayToInteger(res2, w)}")
 
 
 if __name__ == "__main__":
