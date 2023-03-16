@@ -19,7 +19,7 @@ def EuclideForFindGCD(a, b):
 def findAB(a, b):
     for i in range(a, b):
         for j in range(i + 1, b):
-            if checkPrime(math.gcd(i, j)):
+            if checkPrime(EuclideForFindGCD(i, j)):
                 print(f"{i} {j}")
 
 
