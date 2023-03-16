@@ -59,6 +59,8 @@ def AdditionInFp(a, b, p, w):
     e, C = MultiprecisionAddition(a, b, t, w)
     if e == 1:
         e, C = MultiprecisionSubtraction(parseArrayToInteger(C, w), p, t, w)
+    elif parseArrayToInteger(C, w) >= p:
+        e, C = MultiprecisionSubtraction(parseArrayToInteger(C, w), p, t, w)
     return e, C
 
 
