@@ -20,7 +20,8 @@ def F(n):
 def sum(l, r):
     s = 0
     for i in range(l + 1, r):
-        s += F(i) + F(i - 1)
+        for j in range(i + 1, r):
+            s += F(i) * F(j)
     return s
 
 
