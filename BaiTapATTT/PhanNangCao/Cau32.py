@@ -85,7 +85,7 @@ def ModularInverse(a, p):
     if d != 1:
         return -1
     else:
-        return x
+        return x % p
 
 
 def RSA():
@@ -98,7 +98,7 @@ def RSA():
     phi = (p - 1) * (q - 1)
     while True:
         e = random.randint(2, phi - 1)
-        if math.gcd(e, phi) == 1 and ModularInverse(e, phi) > 0:
+        if math.gcd(e, phi) == 1:
             break
     d = ModularInverse(e, phi)
     m = int(input("Nhập SBD: "))
