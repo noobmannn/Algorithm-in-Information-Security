@@ -10,7 +10,7 @@ def ModularInverse(a, p):
     if d != 1:
         return -1
     else:
-        return x
+        return x % p
 
 
 def main():
