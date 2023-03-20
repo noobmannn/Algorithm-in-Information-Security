@@ -13,7 +13,7 @@ def checkPrime(n):
 def check(n, S):
     b = len(S)
     for i in range(1, b):
-        for j in range(0, i):
+        for j in range(i, b):
             if i ** 2 + j ** 2 == n:
                 return True
     return False
@@ -31,8 +31,7 @@ def solve(a, b):
 def main():
     a = int(input("Nhập A: "))
     b = int(input("Nhập B: "))
-    print(f"Các số nguyên tố thoả yêu cầu là: ", end="")
-    print(solve(a, b))
+    print(f"Số các số nguyên tố thoả yêu cầu là: {len(solve(a, b))}")
 
 
 if __name__ == "__main__":
