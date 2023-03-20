@@ -1,3 +1,10 @@
+"""
+w = 8, p = 2147483647
+m = log cơ số 2 của p = 31
+t = 31/8 = 3.875 làm tròn thành t = 4
+"""
+
+
 def parseIntegerToArray(a, t, w):
     A = [0 for _ in range(t)]
     i = 3
