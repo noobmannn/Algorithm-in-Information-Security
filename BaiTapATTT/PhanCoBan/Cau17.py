@@ -22,8 +22,11 @@ def main():
     A = int(input("Nhập A: "))
     B = int(input("Nhập B: "))
     C = int(input("Nhập C: "))
-    print(f"Số nguyên cần tim là: ", end="")
-    print(findX(n, A, B, C))
+    if findX(n, A, B, C) != -1:
+        print(f"Số nguyên cần tim là: ", end="")
+        print(findX(n, A, B, C))
+    else:
+        print("Không tìm thấy số nguyên thoả mãn yêu cầu!!!")
 
 
 if __name__ == "__main__":
