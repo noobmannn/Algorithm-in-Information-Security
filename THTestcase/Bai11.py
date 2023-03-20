@@ -1,4 +1,7 @@
-import math
+def EuclideForFindGCD(a, b):
+    if a == 0:
+        return b
+    return EuclideForFindGCD(b % a, a)
 
 
 def pollardsRhoAlgorithm(n):
@@ -9,7 +12,7 @@ def pollardsRhoAlgorithm(n):
         a = (a ** 2 + 1) % n
         b = (b ** 2 + 1) % n
         b = (b ** 2 + 1) % n
-        d = math.gcd(abs(a - b), n)
+        d = EuclideForFindGCD(abs(a - b), n)
     if d == n:
         return -1
     else:
