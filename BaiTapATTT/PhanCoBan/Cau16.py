@@ -24,13 +24,14 @@ def findPrimeFromRandomList(n):
     for i in listRandom:
         if checkPrime(i):
             listResult.append(i)
-    return listResult
+    return listRandom, listResult
 
 
 def main():
     n = int(input("Nhập N: "))
-    print(f"Các số nguyên tố trong mảng ngẫu nhiên {n} phần tử là: ", end="")
-    print(findPrimeFromRandomList(n))
+    listSrc, listRes = findPrimeFromRandomList(n)
+    print(f"Mảng sinh ngẫu nhiên {n} phần tử: {listSrc}")
+    print(f"Các số nguyên tố trong mảng ngẫu nhiên {n} phần tử trên là: {listRes}")
 
 
 if __name__ == "__main__":
