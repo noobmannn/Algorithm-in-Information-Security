@@ -8,10 +8,15 @@ def findQPrime(n):
 
 def main():
     n = int(input("Nhập vào N: "))
-    print(f"Các số Q-Prime nhỏ hơn hoặc bằng {n} là: ", end="")
+    listRes = []
     for i in range(1, n):
         if findQPrime(i):
-            print(i, end=' ')
+            listRes.append(i)
+    if len(listRes) != 0:
+        print(f"Các số Q-Prime nhỏ hơn hoặc bằng {n} là: ", end="")
+        print(listRes)
+    else:
+        print("Không tìm thây số Q-Prime thoả yêu cầu!!!")
     print()
 
 
